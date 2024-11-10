@@ -5,20 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hello</title>
     <script>
-        function hello(){
-            let h1 = document.querySelector('h1');
-            if(h1.innerHTML=== 'Hello!'){
-               h1.innerHTML= 'Goodbye!';
-            }else{
-               h1.innerHTML= 'Hello!'
-            }
-            
-        }
+        document.addEventListener('DOMContentLoaded', function(){
+         document.querySelector('form').onsubmit = function(){
+            let name = document.querySelector('#name').value;
+            document.querySelector('h1').innerHTML = `Hello ${name}!`;
+            return false;
+         }
+        })
         
     </script>
  </head>
  <body>
     <h1>Hello!</h1>
-    <button onclick="hello()">Click here</button>
- </body>
+   <form>
+      <input autofocus type="text" placeholder="Name" id="name">
+      <input type="submit" value="Submit">
+   </form>
+   </body>
  </html>
