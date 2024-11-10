@@ -6,23 +6,18 @@
     <title>Colors</title>
     <script>
         document.addEventListener('DOMContentLoaded', function(){
-            const h1 = document.querySelector('h1');
-            document.querySelector('#red').onclick = function(){
-                h1.style.color = 'red';
-            }
-            document.querySelector('#green').onclick = function(){
-                h1.style.color = 'green';
-            }
-            document.querySelector('#blue').onclick = function(){
-                h1.style.color = 'blue';
-            }
+            document.querySelectorAll('button').forEach(function(button){
+                button.onclick = function(){
+                    document.querySelector('h1').style.color = button.dataset.color;
+                }
+            })
         })
     </script>
 </head>
 <body>
     <h1>Hello!</h1>
-    <button>Red</button>
-    <button>Green</button>
-    <button>Blue</button>
+    <button data-color="red">Red</button>
+    <button data-color="green">Green</button>
+    <button data-color="blue">Blue</button>
 </body>
 </html>
