@@ -6,11 +6,11 @@
     <title>Hello</title>
     <script>
         function hello(){
-            
-            if(document.querySelector('h1').innerHTML === 'Hello!'){
-               document.querySelector('h1').innerHTML = 'Goodbye!';
+            let h1 = document.querySelector('h1');
+            if(h1.innerHTML=== 'Hello!'){
+               h1.innerHTML= 'Goodbye!';
             }else{
-               document.querySelector('h1').innerHTML = 'Hello!'
+               h1.innerHTML= 'Hello!'
             }
             
         }
