@@ -6,23 +6,45 @@
     <title>Animate</title>
     <style>
 
-        @keyframes grow{
-            from{
-                font-size: 20px;
+        @keyframes move{
+            0%{
+                left: 0%;
             }
-            to{
-                font-size: 100px;
+            50%{
+                left: 50%;
+            }
+            100%{
+                left: 0%;
             }
         }
 
         h1{
-            animation-name: grow;
+            position: relative;
+            animation-name: move;
             animation-duration: 2s;
             animation-fill-mode: forwards;
+            animation-iteration-count: infinite;
         }
     </style>
+    <script>
+        document.addEventListener('DOMContentLoaded',()=>{
+            const h1 = document.querySelector('h1');
+            let state = h1.style.animationPlayState;
+            h1.style.animationPlayState = 'paused';
+            document.querySelector('button').onclick =()=>{
+            const h1 = document.querySelector('h1');
+            let state = h1.style.animationPlayState;
+                if(state === 'running'){
+                    h1.style.animationPlayState = 'paused';
+                }else{
+                    h1.style.animationPlayState = 'running';
+                }
+            }
+        })
+    </script>
 </head>
 <body>
     <h1>Welcome!</h1>
+    <button>Click Here</button>
 </body>
 </html>
